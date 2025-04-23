@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+requests
+cryptography
+email-validator
+stripe
+python-dotenv
