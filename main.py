@@ -88,10 +88,6 @@ API_KEY_HEADER = APIKeyHeader(name="X-API-Key")
 class EntropyRequest(BaseModel):
     size_kb: int
 
-class EmailForm(BaseModel):
-    tier: str
-    email: str
-
 # --- Helper: Send Email --- #
 def send_email(to_email, subject, body):
     msg = EmailMessage()
@@ -188,7 +184,7 @@ def subscribe_form():
       <button type="submit">Subscribe</button>
     </form>
     </body></html>
-    ")
+    """)
 
 @app.post("/subscribe")
 def subscribe_user(tier: str = Form(...), email: str = Form(...)):
@@ -228,4 +224,3 @@ def root():
         "admin": "Visit /admin/usage to view usage logs.",
         "note": "Daily quotas are enforced per API key tier."
     }
-
